@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intersection Observer API Example</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+        .box {
+            width: 250px;
+            height: 250px;
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="frame">
+        <ul id="boxList"></ul>
+    </div>
+    
+    <script>
+        // Get a reference to the box list element
+        const $boxList = document.getElementById("boxList");
+        // Create an array of awesome colours to get randomly
+        const colours = ["red", "green", "orange", "purple", "blue", "yellow", "magenta"];
+        // Create 50 list elements and add them to the list
+        for (let i = 0; i < 50; i++) {
+            const $box = document.createElement("li");
+            const colour = Math.floor(Math.random() * (6 + 1));
+            $box.style.backgroundColor = colours[colour];
+            $box.classList.add("box");
+            $box.id = `box_${i}`;
+            $boxList.appendChild($box);
+        }    
+
+    </script>
+</body>
+</html>
